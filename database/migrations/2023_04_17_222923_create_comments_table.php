@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('post_comment_list', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('comment_id');
+            $table->text('message');
+            $table->timestamp('posted_on')->useCurrent();
+            $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('post_id');
-            $table->foreign('comment_id')->references('id')->on('comments');
             $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
@@ -25,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('post_comment_list');
+        Schema::dropIfExists('comments');
     }
 };
