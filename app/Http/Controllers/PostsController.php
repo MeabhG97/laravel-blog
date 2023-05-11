@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Cviebrock\EloquentSluggable\Services\SlugService;
@@ -72,8 +73,9 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        return view('blog.show')
-            ->with('post', Post::where('slug', $slug)->first());
+        $post = Post::where('slug', $slug)->first();
+        $comments = DB::select('select * from comments where post_id in (select id from posts where slug = ?)', [$slug]);
+        return view('blog.show', compact('post','comments'));
     }
 
     /**
