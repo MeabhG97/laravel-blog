@@ -21,30 +21,30 @@
             <!--Navbar sample code retrieved from https://codepen.io/chris__sev/pen/QWGjQKe?editors=1010-->
 
         <!-- navbar goes here -->
-        <nav class="bg-gray-100">
+        <nav class="bg-gray-800">
             <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between">
         
                 <div class="flex space-x-4">
                     <!-- primary nav -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="/" class="py-5 px-3 text-gray-700 hover:text-gray-900">Home</a>
-                    <a href="/blog" class="py-5 px-3 text-gray-700 hover:text-gray-900">Blog</a>
+                    <a href="/" class="py-5 px-3 text-white hover:text-white">Home</a>
+                    <a href="/blog" class="py-5 px-3 text-white hover:text-white">Blog</a>
                 </div>
                 </div>
         
                 <!-- secondary nav -->
                 <div class="hidden md:flex items-center space-x-1">
                     @guest
-                                <a class="py-5 px-3" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="py-5 px-3 text-white" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <a class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 rounded transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white rounded transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
                                 <span>{{ Auth::user()->name }}</span>
 
                                 <a href="{{ route('logout') }}"
-                                class="py-5 px-3"
+                                class="py-5 px-3 text-white"
                                 onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
@@ -56,7 +56,7 @@
                 <!-- mobile button goes here -->
                 <div class="md:hidden flex items-center">
                 <button class="mobile-menu-button">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
