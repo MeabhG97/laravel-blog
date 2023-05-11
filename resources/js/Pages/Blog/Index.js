@@ -31,10 +31,8 @@ export default function index(){
                 null
             }
             
-            {console.log(posts)}
-            {console.log(auth)}
-
             {posts.map(post => {
+                let date = new Date(post.updated_at);
                 return (<div className="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200" key={post.slug}>
                     <div>
                         <img src={`images/${post.image_path}`} alt=""/>
@@ -45,7 +43,7 @@ export default function index(){
                         </h2>
             
                         <span className="text-gray-500">
-                            By <span className="font-bold italic text-gray-800">{"USER"}</span>, Created on {post.updated_at}
+                            By <span className="font-bold italic text-gray-800">{"USER"}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                         </span>
             
                         <p className="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">

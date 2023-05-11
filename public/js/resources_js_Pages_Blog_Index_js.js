@@ -38,7 +38,8 @@ function index() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "/blog/create",
     className: "bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl"
-  }, "Create post")) : null, console.log(posts), console.log(auth), posts.map(function (post) {
+  }, "Create post")) : null, posts.map(function (post) {
+    var date = new Date(post.updated_at);
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200",
       key: post.slug
@@ -51,7 +52,7 @@ function index() {
       className: "text-gray-500"
     }, "By ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "font-bold italic text-gray-800"
-    }, "USER"), ", Created on ", post.updated_at), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    }, "USER"), ", Created on ", "".concat(date.getDate(), "/").concat(date.getMonth(), "/").concat(date.getFullYear())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       className: "text-xl text-gray-700 pt-8 pb-10 leading-8 font-light"
     }, post.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
       href: "/blog/".concat(post.slug),
