@@ -23,4 +23,13 @@ class CommentsController extends Controller
 
         return redirect('/blog/' . $request->input('post_slug'));
     }
+
+    public function destroy($id, $slug)
+    {
+        $comment = Comment::where('id', $id);
+        $comment->delete();
+
+        
+        return redirect('/blog/' . $slug);
+    }
 }
