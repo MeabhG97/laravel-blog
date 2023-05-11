@@ -39515,13 +39515,13 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
-	"./Test": [
-		"./resources/js/Pages/Test.js",
-		"resources_js_Pages_Test_js"
+	"./Blog/Index": [
+		"./resources/js/Pages/Blog/Index.js",
+		"resources_js_Pages_Blog_Index_js"
 	],
-	"./Test.js": [
-		"./resources/js/Pages/Test.js",
-		"resources_js_Pages_Test_js"
+	"./Blog/Index.js": [
+		"./resources/js/Pages/Blog/Index.js",
+		"resources_js_Pages_Blog_Index_js"
 	]
 };
 function webpackAsyncContext(req) {
@@ -39631,7 +39631,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_Pages_Test_js") return "js/" + chunkId + ".js";
+/******/ 			if (chunkId === "resources_js_Pages_Blog_Index_js") return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -39758,7 +39758,7 @@ module.exports = webpackAsyncContext;
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("resources_js_Pages_Test_js" == chunkId) {
+/******/ 						if("resources_js_Pages_Blog_Index_js" == chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => {
 /******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];
