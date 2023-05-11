@@ -25,6 +25,7 @@
         enctype="multipart/form-data">
         @csrf
         <input class="hidden" name="post_id" value="{{ $post->id }}">
+        <input class="hidden" name="post_slug" value="{{ $post->slug }}">
         <textarea 
             name="message"
             placeholder="Message..."

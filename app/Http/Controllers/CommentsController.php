@@ -21,7 +21,6 @@ class CommentsController extends Controller
             'post_id' => $request->input('post_id')
         ]);
 
-        return redirect('/blog')
-            ->with('message', 'Your post has been added!');
+        return redirect('/blog/' . $request->input('post_slug'));
     }
 }
