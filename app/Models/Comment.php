@@ -10,7 +10,7 @@ class Comment extends Model
     use HasFactory;
 
     protected $dates = ['created_at', 'updated_at'];
-    protected $fillable = ['message','user_id'];
+    protected $fillable = ['message','user_id','post_id'];
 
     public function user()
     {
