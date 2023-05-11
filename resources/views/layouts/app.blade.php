@@ -28,23 +28,23 @@
                 <div class="flex space-x-4">
                     <!-- primary nav -->
                 <div class="hidden md:flex items-center space-x-1">
-                    <a href="/" class="py-5 px-3 text-white hover:text-gray-500">Home</a>
-                    <a href="/blog" class="py-5 px-3 text-white hover:text-gray-500">Blog</a>
+                    <a href="/" class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('/') ? "text-blue-500" : "" }}">Home</a>
+                    <a href="/blog" class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('blog*') ? "text-blue-500" : "" }}">Blog</a>
                 </div>
                 </div>
         
                 <!-- secondary nav -->
                 <div class="hidden md:flex items-center space-x-1">
                     @guest
-                                <a class="py-5 px-3 text-white hover:text-gray-500" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('login') ? "text-blue-500" : "" }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <a class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 {{ request()->is('register') ? "text-blue-500" : "" }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
                                 <span class="block py-2 px-4 text-yellow-400">{{ Auth::user()->name }}</span>
 
                                 <a href="{{ route('logout') }}"
-                                class="py-5 px-3 text-white hover:text-gray-500"
+                                class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('logout') ? "text-blue-500" : "" }}"
                                 onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
@@ -67,19 +67,19 @@
         
             <!-- mobile menu -->
             <div class="mobile-menu hidden md:hidden">
-            <a href="/" class="block py-2 px-4 text-sm text-white hover:text-gray-500">Home</a>
-            <a href="/blog" class="block py-2 px-4 text-sm text-white hover:text-gray-500">Blog</a>
+            <a href="/" class="block py-2 px-4 text-sm text-white hover:text-gray-500 {{ request()->is('/') ? "text-blue-500" : "" }}">Home</a>
+            <a href="/blog" class="block py-2 px-4 text-sm text-white hover:text-gray-500 {{ request()->is('blog*') ? "text-blue-500" : "" }}">Blog</a>
 
             @guest
-                                <a class="block py-2 px-4 text-sm text-white hover:text-gray-500" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="block py-2 px-4 text-sm text-white hover:text-gray-500 {{ request()->is('login') ? "text-blue-500" : "" }}" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <a class="block py-2 px-4 bg-yellow-400 text-white hover:text-gray-500 hover:bg-yellow-300 transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="block py-2 px-4 bg-yellow-400 text-white hover:text-gray-500 hover:bg-yellow-300 transition duration-300 {{ request()->is('register') ? "text-blue-500" : "" }}" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
                                 <span class="block py-2 px-4 text-sm text-yellow-400">{{ Auth::user()->name }}</span>
 
                                 <a href="{{ route('logout') }}"
-                                class="block py-2 px-4 text-sm text-white hover:text-gray-500"
+                                class="block py-2 px-4 text-sm text-white hover:text-gray-500 {{ request()->is('logout') ? "text-blue-500" : "" }}"
                                 onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
