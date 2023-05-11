@@ -3,7 +3,7 @@ import { usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 export default function index(){
-    const {posts, auth} = usePage().props;
+    const {posts, auth, flash} = usePage().props;
 
     function handleDelete(post){
         Inertia.delete(`/blog/${post.slug}`);
@@ -19,6 +19,16 @@ export default function index(){
                 </div>
             </div>
 
+            {flash.message !== null ?
+                <div className="w-4/5 m-auto mt-10 pl-2">
+                    <p className="w-2/6 mb-4 text-gray-50 bg-green-500 rounded-2xl py-4">
+                        {flash.message}
+                    </p>
+                </div>
+            :
+                null
+            }
+
             {auth.user !== null ?
                 <div className="pt-15 w-4/5 m-auto">
                     <a 
@@ -30,7 +40,7 @@ export default function index(){
             :
                 null
             }
-            
+
             {posts.map(post => {
                 let date = new Date(post.updated_at);
                 return (<div className="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200" key={post.slug}>

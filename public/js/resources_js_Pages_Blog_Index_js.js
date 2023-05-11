@@ -21,7 +21,8 @@ __webpack_require__.r(__webpack_exports__);
 function index() {
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       posts = _usePage$props.posts,
-      auth = _usePage$props.auth;
+      auth = _usePage$props.auth,
+      flash = _usePage$props.flash;
 
   function handleDelete(post) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.delete("/blog/".concat(post.slug));
@@ -33,7 +34,11 @@ function index() {
     className: "py-15 border-b border-gray-200"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
     className: "text-6xl"
-  }, "Blog Posts"))), auth.user !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, "Blog Posts"))), flash.message !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "w-4/5 m-auto mt-10 pl-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    className: "w-2/6 mb-4 text-gray-50 bg-green-500 rounded-2xl py-4"
+  }, flash.message)) : null, auth.user !== null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "pt-15 w-4/5 m-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "/blog/create",
