@@ -17,19 +17,22 @@
     <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
         {{ $post->description }}
     </p>
+    <div>
     @php
         foreach ($comments as $comment) {
             echo '<div class="commentBox"';
                 echo '<div class="commentInfo">';
-                    echo "<p>" . date('d-m-Y', strtotime($comment->created_at)) . "</p>";
+                    echo "<p>$comment->name</p>";
+                    echo "<p>" . date('d-m-y H:i', strtotime($comment->created_at)) . "</p>";
                 echo '</div>';
                 echo '<div class="commentMessage">';
                     echo "<p>$comment->message</p>";
                 echo '</div>';
             echo '</div>';
-        
         }
     @endphp
+    </div>
+
 </div>
 
 @endsection 
