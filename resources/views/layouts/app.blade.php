@@ -67,19 +67,19 @@
         
             <!-- mobile menu -->
             <div class="mobile-menu hidden md:hidden">
-            <a href="/" class="block py-2 px-4 text-sm hover:bg-gray-200">Home</a>
-            <a href="/blog" class="block py-2 px-4 text-sm hover:bg-gray-200">Blog</a>
+            <a href="/" class="block py-2 px-4 text-sm text-white ">Home</a>
+            <a href="/blog" class="block py-2 px-4 text-sm text-white ">Blog</a>
 
             @guest
-                                <a class="block py-2 px-4 text-sm hover:bg-gray-200" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="block py-2 px-4 text-sm text-white " href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <a class="block py-2 px-4 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="block py-2 px-4 bg-yellow-400 text-white hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
-                                <span class="block py-2 px-4 text-sm hover:bg-gray-200">{{ Auth::user()->name }}</span>
+                                <span class="block py-2 px-4 text-sm ">{{ Auth::user()->name }}</span>
 
                                 <a href="{{ route('logout') }}"
-                                class="block py-2 px-4 text-sm hover:bg-gray-200"
+                                class="block py-2 px-4 text-sm text-white "
                                 onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
