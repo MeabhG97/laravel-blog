@@ -73,7 +73,7 @@
             @guest
                                 <a class="block py-2 px-4 text-sm hover:bg-gray-200" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 @if (Route::has('register'))
-                                    <a class="block py-2 px-4 text-sm hover:bg-gray-200" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="block py-2 px-4 bg-yellow-400 hover:bg-yellow-300 text-yellow-900 hover:text-yellow-800 transition duration-300" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             @else
                                 <span class="block py-2 px-4 text-sm hover:bg-gray-200">{{ Auth::user()->name }}</span>
