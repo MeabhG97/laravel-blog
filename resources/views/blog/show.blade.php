@@ -18,6 +18,23 @@
         {{ $post->description }}
     </p>
     <div>
+        <p>Comments</p>
+        <form 
+        action="/comment"
+        method="POST"
+        enctype="multipart/form-data">
+        @csrf
+        <textarea 
+            name="message"
+            placeholder="Message..."
+            class="py-10 bg-transparent block border-b-2 w-full h-30 text-xl outline-none"></textarea>
+
+        <button    
+            type="submit"
+            class="uppercase mt-15 bg-blue-500 text-gray-100 text-lg font-extrabold py-4 px-8 rounded-3xl">
+            Submit Comment
+        </button>
+    </form>
     @php
         foreach ($comments as $comment) {
             echo '<div class="commentBox"';
