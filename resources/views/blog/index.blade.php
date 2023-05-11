@@ -43,8 +43,8 @@
 
             <p class="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
                 @php
-                    if (Str::length($post->description) > 250) echo Str::substr($post->description, 0, 250) . "...";
-                    else echo $post->description;
+                    if (Str::length($post->description) > 250) echo htmlspecialchars(Str::substr($post->description, 0, 250)) . "...";
+                    else echo htmlspecialchars($post->description);
                 @endphp
             </p>
 
