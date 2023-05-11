@@ -24,6 +24,7 @@
         method="POST"
         enctype="multipart/form-data">
         @csrf
+        <input class="hidden" name="post_id" value="{{ $post->id }}">
         <textarea 
             name="message"
             placeholder="Message..."
