@@ -36,11 +36,11 @@ export default function index(){
 
             {auth.user !== null ?
                 <div className="pt-15 w-4/5 m-auto">
-                    <a 
+                    <Link
                         href="/blog/create"
                         className="bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
                         Create post
-                    </a>
+                    </Link>
                 </div>
             :
                 null
@@ -59,7 +59,6 @@ export default function index(){
                             </h2>
                 
                             <span className="text-gray-500">
-                                //TODO User Name
                                 By <span className="font-bold italic text-gray-800">{"USER"}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                             </span>
                 
@@ -74,11 +73,11 @@ export default function index(){
                             {auth.user !== null && auth.user.id === post.user_id ?
                                 <>
                                     <span className="float-right">
-                                        <a 
+                                        <Link
                                             href={`/blog/${post.slug}/edit`}
                                             className="text-gray-700 italic hover:text-gray-900 pb-1 border-b-2">
                                             Edit
-                                        </a>
+                                        </Link>
                                     </span>
                     
                                     <span className="float-right">
