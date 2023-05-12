@@ -16,7 +16,7 @@
         </div>
     </div>
 
-    <div class="text-center p-15 bg-black text-white">
+    <div class="text-center p-15 bg-gray-800 text-white">
         <h2 class="text-2xl pb-5 text-l"> 
             We support these resources, that let you learn...
         </h2>
@@ -50,7 +50,7 @@
         @php
             foreach ($posts as $post) {
             
-            echo '<div class="flex bg-yellow-700 text-gray-100 pt-10">
+            echo '<div class="flex bg-gray-800 border-4 border-white text-gray-100 pt-10">
                     <div class="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
                         <span class="uppercase text-xs">' .
                             $post->title
