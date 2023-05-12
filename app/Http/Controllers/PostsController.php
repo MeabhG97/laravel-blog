@@ -32,7 +32,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return Inertia::render('Blog/Create');
     }
 
     /**
@@ -85,7 +85,7 @@ class PostsController extends Controller
      */
     public function edit($slug)
     {
-        return view('blog.edit')
+        return Inertia::render('Blog/Edit')
             ->with('post', Post::where('slug', $slug)->first());
     }
 
