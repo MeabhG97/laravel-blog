@@ -39515,6 +39515,38 @@ module.exports = function getSideChannel() {
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 var map = {
+	"./Auth/Login": [
+		"./resources/js/Pages/Auth/Login.js",
+		"resources_js_Pages_Auth_Login_js"
+	],
+	"./Auth/Login.js": [
+		"./resources/js/Pages/Auth/Login.js",
+		"resources_js_Pages_Auth_Login_js"
+	],
+	"./Auth/Register": [
+		"./resources/js/Pages/Auth/Register.js",
+		"resources_js_Pages_Auth_Register_js"
+	],
+	"./Auth/Register.js": [
+		"./resources/js/Pages/Auth/Register.js",
+		"resources_js_Pages_Auth_Register_js"
+	],
+	"./Blog/Create": [
+		"./resources/js/Pages/Blog/Create.js",
+		"resources_js_Pages_Blog_Create_js"
+	],
+	"./Blog/Create.js": [
+		"./resources/js/Pages/Blog/Create.js",
+		"resources_js_Pages_Blog_Create_js"
+	],
+	"./Blog/Edit": [
+		"./resources/js/Pages/Blog/Edit.js",
+		"resources_js_Pages_Blog_Edit_js"
+	],
+	"./Blog/Edit.js": [
+		"./resources/js/Pages/Blog/Edit.js",
+		"resources_js_Pages_Blog_Edit_js"
+	],
 	"./Blog/Index": [
 		"./resources/js/Pages/Blog/Index.js",
 		"resources_js_Pages_Blog_Index_js"
@@ -39530,6 +39562,14 @@ var map = {
 	"./Blog/Show.js": [
 		"./resources/js/Pages/Blog/Show.js",
 		"resources_js_Pages_Blog_Show_js"
+	],
+	"./Index": [
+		"./resources/js/Pages/Index.js",
+		"resources_js_Pages_Index_js"
+	],
+	"./Index.js": [
+		"./resources/js/Pages/Index.js",
+		"resources_js_Pages_Index_js"
 	],
 	"./Layout/Footer": [
 		"./resources/js/Pages/Layout/Footer.js",
@@ -39655,7 +39695,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Blog_Index_js":1,"resources_js_Pages_Blog_Show_js":1,"resources_js_Pages_Layout_Footer_js":1,"resources_js_Pages_Layout_Layout_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Auth_Login_js":1,"resources_js_Pages_Auth_Register_js":1,"resources_js_Pages_Blog_Create_js":1,"resources_js_Pages_Blog_Edit_js":1,"resources_js_Pages_Blog_Index_js":1,"resources_js_Pages_Blog_Show_js":1,"resources_js_Pages_Index_js":1,"resources_js_Pages_Layout_Footer_js":1,"resources_js_Pages_Layout_Layout_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

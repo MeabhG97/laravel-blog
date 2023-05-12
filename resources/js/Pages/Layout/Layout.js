@@ -1,8 +1,17 @@
 import React from "react";
-import { usePage } from "@inertiajs/inertia-react";
+import { useForm, usePage } from "@inertiajs/inertia-react";
+import { Link } from "@inertiajs/inertia-react";
+import { Inertia } from "@inertiajs/inertia";
 
 export default function Layout(){
     const {auth} = usePage().props;
+
+    const {post} = useForm();
+
+    function handleLogout(e){
+        e.preventDefault();
+        Inertia.post('/logout');
+    }
 
     return(
         <header className="bg-gray-800 py-6">
@@ -14,7 +23,7 @@ export default function Layout(){
                 </div>
                 <nav className="space-x-4 text-gray-300 text-sm sm:text-base">
                     <a className="no-underline hover:underline" href="/">Home</a>
-                    <a className="no-underline hover:underline" href="/blog">Blog</a>
+                    <Link className="no-underline hover:underline" href="/blog">Blog</Link>
                     {auth.user === null ?
                         <>
                             <a className="no-underline hover:underline" href="/login">Login</a>
@@ -24,12 +33,7 @@ export default function Layout(){
                         <>          
                             <span>{auth.user.name}</span>
 
-                            <a href="/logout"
-                                className="no-underline hover:underline"
-                                onClick="event.preventDefault();
-                                    document.getElementById('logout-form').submit();">Logout</a>
-                            <form id="logout-form" action="/logout" method="POST" className="hidden">
-                            </form>
+                            <a onClick={handleLogout}>Logout</a>
                         </>
                     }
                 </nav>
