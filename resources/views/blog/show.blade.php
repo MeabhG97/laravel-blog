@@ -48,7 +48,26 @@
                     echo "<p>$comment->message</p>";
                 echo '</div>';
             echo '</div>';
+
+            if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) {
+                echo '
+                <span class="float-right">
+                     <form 
+                        action="/comment/' . $comment->id .'"
+                        method="DELETE">
+
+                        <button
+                            class="text-red-500 pr-3"
+                            type="submit">
+                            Delete
+                        </button>
+
+                    </form>
+                </span>';
+            }
+
         }
+        
     @endphp
     </div>
 
