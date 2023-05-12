@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
+            @if (isset(Auth::user()->id) && Auth::user()->id == $comment->userId)
                 <span class="float-right">
                      <form 
                         action="/comment/' . $comment->id .'"
