@@ -5,8 +5,11 @@ import Layout from "../Layout/Layout";
 import Footer from "../Layout/Footer";
 
 export default function Show(){
-    const {post} = usePage().props;
+    const {post, users} = usePage().props;
     let date = new Date(post.updated_at);
+    let user = users.find(user => {
+        return user.id === post.user_id;
+   });
 
     return(
         <>
@@ -25,8 +28,7 @@ export default function Show(){
 
             <div className="w-4/5 m-auto pt-20">
                 <span className="text-gray-500">
-                    //TODO USER
-                    By <span className="font-bold italic text-gray-800">{}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
+                    By <span className="font-bold italic text-gray-800">{user.name}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                 </span>
 
                 <p className="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">

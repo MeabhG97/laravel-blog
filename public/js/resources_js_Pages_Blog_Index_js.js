@@ -27,7 +27,8 @@ function index() {
   var _usePage$props = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props,
       posts = _usePage$props.posts,
       auth = _usePage$props.auth,
-      flash = _usePage$props.flash;
+      flash = _usePage$props.flash,
+      users = _usePage$props.users;
 
   function handleDelete(post) {
     _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.delete("/blog/".concat(post.slug));
@@ -50,6 +51,9 @@ function index() {
     className: "bg-blue-500 uppercase bg-transparent text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl"
   }, "Create post")) : null, posts.map(function (post) {
     var date = new Date(post.updated_at);
+    var user = users.find(function (user) {
+      return user.id === post.user_id;
+    });
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200",
       key: post.slug
@@ -62,7 +66,7 @@ function index() {
       className: "text-gray-500"
     }, "By ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
       className: "font-bold italic text-gray-800"
-    }, "USER"), ", Created on ", "".concat(date.getDate(), "/").concat(date.getMonth(), "/").concat(date.getFullYear())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+    }, user.name), ", Created on ", "".concat(date.getDate(), "/").concat(date.getMonth(), "/").concat(date.getFullYear())), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
       className: "text-xl text-gray-700 pt-8 pb-10 leading-8 font-light"
     }, post.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: "/blog/".concat(post.slug),

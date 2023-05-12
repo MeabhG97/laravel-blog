@@ -7,7 +7,7 @@ import Layout from "../Layout/Layout";
 import Footer from "../Layout/Footer";
 
 export default function index(){
-    const {posts, auth, flash} = usePage().props;
+    const {posts, auth, flash, users} = usePage().props;
 
     function handleDelete(post){
         Inertia.delete(`/blog/${post.slug}`);
@@ -48,6 +48,9 @@ export default function index(){
 
             {posts.map(post => {
                 let date = new Date(post.updated_at);
+                let user = users.find(user => {
+                     return user.id === post.user_id;
+                });
                 return (
                     <div className="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200" key={post.slug}>
                         <div>
@@ -59,7 +62,7 @@ export default function index(){
                             </h2>
                 
                             <span className="text-gray-500">
-                                By <span className="font-bold italic text-gray-800">{"USER"}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
+                                By <span className="font-bold italic text-gray-800">{user.name}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                             </span>
                 
                             <p className="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
