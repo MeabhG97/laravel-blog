@@ -74,7 +74,7 @@ class PostsController extends Controller
     public function show($slug)
     {
         $post = Post::where('slug', $slug)->first();
-        $comments = DB::select('select comments.message, comments.created_at, comments.updated_at, users.name from comments join users on comments.user_id=users.id where post_id in (select id from posts where slug = ?)', [$slug]);
+        $comments = DB::select('select comments.id, comments.message, comments.created_at, comments.updated_at, users.name from comments join users on comments.user_id=users.id where post_id in (select id from posts where slug = ?)', [$slug]);
         return view('blog.show', compact('post','comments'));
     }
 
