@@ -37,24 +37,24 @@
             Submit Comment
         </button>
     </form>
-    @php
-        foreach ($comments as $comment) {
-            echo '<div class="commentBox"';
-                echo '<div class="commentInfo">';
-                    echo "<p>$comment->name</p>";
-                    echo "<p>" . date('d-m-y H:i', strtotime($comment->created_at)) . "</p>";
-                echo '</div>';
-                echo '<div class="commentMessage">';
-                    echo "<p>$comment->message</p>";
-                echo '</div>';
-            echo '</div>';
+        @foreach ($comments as $comment) 
+            <div class="commentBox">
+                <div class="commentInfo">
+                    <p>{{ $comment->name }}</p>
+                    <p>{{ date('d-m-y H:i', strtotime($comment->created_at)) }}</p>
+                </div>
+                <div class="commentMessage">
+                    <p>{{ $comment->message }}</p>
+                </div>
+            </div>
 
-            if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id) {
-                echo '
+            @if (isset(Auth::user()->id) && Auth::user()->id == $post->user_id)
                 <span class="float-right">
                      <form 
                         action="/comment/' . $comment->id .'"
-                        method="DELETE">
+                        method="POST">
+                        @csrf
+                        @method('delete')
 
                         <button
                             class="text-red-500 pr-3"
@@ -63,12 +63,9 @@
                         </button>
 
                     </form>
-                </span>';
-            }
-
-        }
-        
-    @endphp
+                </span>
+            @endif
+        @endforeach
     </div>
 
 </div>
