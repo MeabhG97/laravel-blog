@@ -39523,6 +39523,14 @@ var map = {
 		"./resources/js/Pages/Blog/Index.js",
 		"resources_js_Pages_Blog_Index_js"
 	],
+	"./Blog/Show": [
+		"./resources/js/Pages/Blog/Show.js",
+		"resources_js_Pages_Blog_Show_js"
+	],
+	"./Blog/Show.js": [
+		"./resources/js/Pages/Blog/Show.js",
+		"resources_js_Pages_Blog_Show_js"
+	],
 	"./Layout/Footer": [
 		"./resources/js/Pages/Layout/Footer.js",
 		"resources_js_Pages_Layout_Footer_js"
@@ -39647,7 +39655,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_Pages_Blog_Index_js":1,"resources_js_Pages_Layout_Footer_js":1,"resources_js_Pages_Layout_Layout_js":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Blog_Index_js":1,"resources_js_Pages_Blog_Show_js":1,"resources_js_Pages_Layout_Footer_js":1,"resources_js_Pages_Layout_Layout_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

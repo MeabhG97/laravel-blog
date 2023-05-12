@@ -73,7 +73,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        return view('blog.show')
+        return Inertia::render('Blog/Show')
             ->with('post', Post::where('slug', $slug)->first());
     }
 
