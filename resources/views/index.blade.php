@@ -21,18 +21,18 @@
             We support these resources, that let you learn...
         </h2>
 
-        <span class="font-extrabold block text-4xl py-1">
+        <a href="https://www.w3schools.com/php/" target="_blank" class="font-extrabold block text-4xl py-1">
             PHP
-        </span>
-        <span class="font-extrabold block text-4xl py-1">
+        </a>
+        <a href="https://www.w3schools.com/java/" target="_blank" class="font-extrabold block text-4xl py-1">
             Java
-        </span>
-        <span class="font-extrabold block text-4xl py-1">
+        </a>
+        <a href="https://cplusplus.com/doc/tutorial/" target="_blank" class="font-extrabold block text-4xl py-1">
             C++
-        </span>
-        <span class="font-extrabold block text-4xl py-1">
+        </a>
+        <a href="https://docs.python.org/3/tutorial/index.html" target="_blank" class="font-extrabold block text-4xl py-1">
             Python
-        </span>
+        </a>
     </div>
 
     <div class="text-center py-15">
