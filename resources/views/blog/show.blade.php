@@ -37,8 +37,8 @@
             Submit Comment
         </button>
     </form>
-        @foreach ($comments as $comment) 
-            <div class="commentBox">
+        @foreach ($comments as $comment) <!-- the commentX classes mark potentially  good candidates for custom css -->
+            <div class="commentBox"> 
                 <div class="commentInfo">
                     <p>{{ $comment->name }}</p>
                     <p>{{ date('d-m-y H:i', strtotime($comment->created_at)) }}</p>
@@ -49,9 +49,8 @@
             </div>
 
             @if (isset(Auth::user()->id) && Auth::user()->id == $comment->userId)
-                <span class="float-right">
                      <form 
-                        action="/comment/' . $comment->id .'"
+                        action="/comment/ {{  $comment->id }}"
                         method="POST">
                         @csrf
                         @method('delete')
@@ -63,7 +62,6 @@
                         </button>
 
                     </form>
-                </span>
             @endif
         @endforeach
     </div>
