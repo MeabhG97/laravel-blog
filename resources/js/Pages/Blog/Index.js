@@ -2,6 +2,9 @@ import React from "react";
 import { usePage } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
+import Layout from "../Layout/Layout";
+import Footer from "../Layout/Footer";
+
 export default function index(){
     const {posts, auth, flash} = usePage().props;
 
@@ -11,6 +14,7 @@ export default function index(){
 
     return(
         <>
+            <Layout/>
             <div className="w-4/5 m-auto text-center">
                 <div className="py-15 border-b border-gray-200">
                     <h1 className="text-6xl">
@@ -90,6 +94,7 @@ export default function index(){
                     </div>
                 </div>)
             })}
+            <Footer/>
         </>
     );
 }

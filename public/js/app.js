@@ -39522,6 +39522,22 @@ var map = {
 	"./Blog/Index.js": [
 		"./resources/js/Pages/Blog/Index.js",
 		"resources_js_Pages_Blog_Index_js"
+	],
+	"./Layout/Footer": [
+		"./resources/js/Pages/Layout/Footer.js",
+		"resources_js_Pages_Layout_Footer_js"
+	],
+	"./Layout/Footer.js": [
+		"./resources/js/Pages/Layout/Footer.js",
+		"resources_js_Pages_Layout_Footer_js"
+	],
+	"./Layout/Layout": [
+		"./resources/js/Pages/Layout/Layout.js",
+		"resources_js_Pages_Layout_Layout_js"
+	],
+	"./Layout/Layout.js": [
+		"./resources/js/Pages/Layout/Layout.js",
+		"resources_js_Pages_Layout_Layout_js"
 	]
 };
 function webpackAsyncContext(req) {
@@ -39631,7 +39647,7 @@ module.exports = webpackAsyncContext;
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if (chunkId === "resources_js_Pages_Blog_Index_js") return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_Pages_Blog_Index_js":1,"resources_js_Pages_Layout_Footer_js":1,"resources_js_Pages_Layout_Layout_js":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
@@ -39758,7 +39774,7 @@ module.exports = webpackAsyncContext;
 /******/ 					if(installedChunkData) {
 /******/ 						promises.push(installedChunkData[2]);
 /******/ 					} else {
-/******/ 						if("resources_js_Pages_Blog_Index_js" == chunkId) {
+/******/ 						if("css/app" != chunkId) {
 /******/ 							// setup Promise in chunk cache
 /******/ 							var promise = new Promise((resolve, reject) => {
 /******/ 								installedChunkData = installedChunks[chunkId] = [resolve, reject];
