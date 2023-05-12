@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\User;
 use Cviebrock\EloquentSluggable\Services\SlugService;
+use Inertia\Inertia; 
 
 class PostsController extends Controller
 {
@@ -20,8 +22,9 @@ class PostsController extends Controller
      */
     public function index()
     {
-        return view('blog.index')
-            ->with('posts', Post::orderBy('updated_at', 'DESC')->get());
+        return Inertia::render('Blog/Index')
+            ->with('posts', Post::orderBy('updated_at', 'DESC')->get())
+            ->with('users', User::all());
     }
 
     /**
@@ -31,7 +34,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        return view('blog.create');
+        return Inertia::render('Blog/Create');
     }
 
     /**
@@ -72,8 +75,9 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        return view('blog.show')
-            ->with('post', Post::where('slug', $slug)->first());
+        return Inertia::render('Blog/Show')
+            ->with('post', Post::where('slug', $slug)->first())
+            ->with('users', User::all());
     }
 
     /**
@@ -84,7 +88,7 @@ class PostsController extends Controller
      */
     public function edit($slug)
     {
-        return view('blog.edit')
+        return Inertia::render('Blog/Edit')
             ->with('post', Post::where('slug', $slug)->first());
     }
 
