@@ -10,7 +10,6 @@ export default function Show(){
 
     return(
         <>
-            {console.log(usePage().props)}
             <Layout/>
             <div className="w-4/5 m-auto text-left">
                 <div className="py-15">
@@ -26,6 +25,7 @@ export default function Show(){
 
             <div className="w-4/5 m-auto pt-20">
                 <span className="text-gray-500">
+                    //TODO USER
                     By <span className="font-bold italic text-gray-800">{}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                 </span>
 
