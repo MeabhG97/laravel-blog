@@ -1,12 +1,10 @@
 import React from "react";
-import { useForm, usePage } from "@inertiajs/inertia-react";
+import { usePage } from "@inertiajs/inertia-react";
 import { Link } from "@inertiajs/inertia-react";
 import { Inertia } from "@inertiajs/inertia";
 
 export default function Layout(){
     const {auth} = usePage().props;
-
-    const {post} = useForm();
 
     function handleLogout(e){
         e.preventDefault();
