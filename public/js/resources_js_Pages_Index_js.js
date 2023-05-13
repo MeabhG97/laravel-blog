@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Index() {
   var posts = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.posts;
-  var recentPosts = posts.slice(0, 3);
+  var recentPosts = posts.slice(0, 4);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Layout__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "background-image grid grid-cols-1 m-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -61,7 +61,9 @@ function Index() {
     className: "text-4xl font-bold py-10"
   }, "Recent Posts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "m-auto w-4/5 text-gray-500"
-  }, "Here are some of the most recent posts from our vibrant community!")), recentPosts.map(function (post) {
+  }, "Here are some of the most recent posts from our vibrant community!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    "class": "sm:grid grid-cols-2 w-4/5 m-auto"
+  }, recentPosts.map(function (post) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "flex bg-gray-800 border-4 border-white text-gray-100 pt-10",
       key: post.slug
@@ -75,7 +77,7 @@ function Index() {
       href: "blog/".concat(post.slug),
       className: "uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl"
     }, "Read more")));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Footer__WEBPACK_IMPORTED_MODULE_3__.default, null));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Footer__WEBPACK_IMPORTED_MODULE_3__.default, null));
 }
 
 /***/ }),

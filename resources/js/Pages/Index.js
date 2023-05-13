@@ -9,7 +9,7 @@ export default function Index(){
 
     const {posts} = usePage().props;
 
-    let recentPosts = posts.slice(0,3);
+    let recentPosts = posts.slice(0,4);
 
     return(
         <>
@@ -59,32 +59,33 @@ export default function Index(){
                 </p>
             </div>
 
-            {recentPosts.map(post => {
-                return(
-                    <div className="flex bg-gray-800 border-4 border-white text-gray-100 pt-10" key={post.slug}>
-                        <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                            <span className="uppercase text-xs">
-                                {post.title}
-                            </span>
+            <div class="sm:grid grid-cols-2 w-4/5 m-auto">
+                {recentPosts.map(post => {
+                    return(
+                        <div className="flex bg-gray-800 border-4 border-white text-gray-100 pt-10" key={post.slug}>
+                            <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
+                                <span className="uppercase text-xs">
+                                    {post.title}
+                                </span>
 
-                            <h3 className="text-xl font-bold py-10">
-                                {post.description.length > 250 ?
-                                    <>{post.description.substring(0, 250) + "..."}</>
-                                :
-                                    <>{post.description}</>
-                                }
-                            </h3>
+                                <h3 className="text-xl font-bold py-10">
+                                    {post.description.length > 250 ?
+                                        <>{post.description.substring(0, 250) + "..."}</>
+                                    :
+                                        <>{post.description}</>
+                                    }
+                                </h3>
 
-                            <Link 
-                                href={`blog/${post.slug}`}
-                                className="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-                                Read more
-                            </Link>
+                                <Link 
+                                    href={`blog/${post.slug}`}
+                                    className="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                    Read more
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                );
-            })}
-
+                    );
+                })}
+            </div>
             <Footer/>
         </>
     );
