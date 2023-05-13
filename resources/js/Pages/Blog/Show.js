@@ -28,7 +28,6 @@ export default function Show(){
 
     return(
         <>
-            {console.log(comments)}
             <Layout/>
             <div className="w-4/5 m-auto text-left">
                 <div className="py-15">
@@ -69,26 +68,31 @@ export default function Show(){
                 
                 {comments.map(comment => {
                     let date = new Date(comment.updated_at);
-                    console.log(comment)
+                    let user = users.find(user => {
+                        return user.id === comment.user_id;
+                   });
                     return (
                         <>
-                            <div className="commentBox"> 
-                                <div className="commentInfo">
-                                    <p>{}</p>
-                                    <p>{`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</p>
+                            {comment.post_id === posts.id ?
+                                <div className="commentBox" key={comment.id}> 
+                                    <div className="commentInfo">
+                                        <p>{user.name}</p>
+                                        <p>{`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</p>
+                                    </div>
+                                    <div className="commentMessage">
+                                        <p>{comment.message}</p>
+                                    </div>
+                                    {auth.user !== null && auth.user.id == comment.user_id ?
+                                        <button
+                                            className="text-red-500 pr-3"
+                                            type="button"
+                                            onClick={() => handleDelete(comment)}>
+                                            Delete
+                                        </button>
+                                    :
+                                        null
+                                    }
                                 </div>
-                                <div className="commentMessage">
-                                    <p>{comment.message}</p>
-                                </div>
-                            </div>
-
-                            {auth.user !== null && auth.user.id == comment.user_id ?
-                                <button
-                                    className="text-red-500 pr-3"
-                                    type="button"
-                                    onClick={() => handleDelete(comment)}>
-                                    Delete
-                                </button>
                             :
                                 null
                             }
