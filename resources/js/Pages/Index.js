@@ -1,112 +1,89 @@
 import React from "react";
 import { Link } from "@inertiajs/inertia-react";
-import { usePage, useForm } from "@inertiajs/inertia-react";
+import { usePage } from "@inertiajs/inertia-react";
 
 import Layout from "./Layout/Layout";
 import Footer from "./Layout/Footer";
 
 export default function Index(){
 
+    const {posts} = usePage().props;
+
+    let recentPosts = posts.slice(0,3);
+
     return(
         <>
             <Layout/>
-
             <div className="background-image grid grid-cols-1 m-auto">
                 <div className="flex text-gray-100 pt-10">
-                    <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block text-center">
+                    <div className="title-text-holder m-auto pt-4 pb-8 pl-2 pr-2 sm:m-auto w-4/5 block text-center">
                         <h1 className="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
-                            Inertia
+                            READY TO JUMP INTO ENGAGING PROGRAMMING DISCUSSIONS?
                         </h1>
                         <Link 
                             href="/blog"
-                            className="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl uppercase">
-                            Read More
+                            className="text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl">
+                            Click Here!
                         </Link>
                     </div>
                 </div>
             </div>
 
-            <div className="sm:grid grid-cols-2 gap-20 w-4/5 mx-auto py-15 border-b border-gray-200">
-                <div>
-                    <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" width="700" alt=""/>
-                </div>
-
-                <div className="m-auto sm:m-auto text-left w-4/5 block">
-                    <h2 className="text-3xl font-extrabold text-gray-600">
-                        Struggling to be a better web developer?
-                    </h2>
-                    
-                    <p className="py-8 text-gray-500 text-s">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus.
-                    </p>
-
-                    <p className="font-extrabold text-gray-600 text-s pb-9">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sapiente magnam vero nostrum! Perferendis eos molestias porro vero. Vel alias.
-                    </p>
-
-                    <Link 
-                        href="/blog"
-                        className="uppercase bg-blue-500 text-gray-100 text-s font-extrabold py-3 px-8 rounded-3xl">
-                        Find Out More
-                    </Link>
-                </div>
-            </div>
-
-            <div className="text-center p-15 bg-black text-white">
+            <div className="text-center p-15 bg-gray-800 text-white">
                 <h2 className="text-2xl pb-5 text-l"> 
-                    I'm an expert in...
+                    We support these resources, that let you learn...
                 </h2>
 
-                <span className="font-extrabold block text-4xl py-1">
-                    Ux Design
-                </span>
-                <span className="font-extrabold block text-4xl py-1">
-                    Project Management
-                </span>
-                <span className="font-extrabold block text-4xl py-1">
-                    Digital Strategy
-                </span>
-                <span className="font-extrabold block text-4xl py-1">
-                    Backend Development
-                </span>
+                <Link href="https://www.w3schools.com/php/" target="_blank" className="font-extrabold block text-4xl py-1">
+                    PHP
+                </Link>
+                <Link href="https://www.w3schools.com/java/" target="_blank" className="font-extrabold block text-4xl py-1">
+                    Java
+                </Link>
+                <Link href="https://cplusplus.com/doc/tutorial/" target="_blank" className="font-extrabold block text-4xl py-1">
+                    C++
+                </Link>
+                <Link href="https://docs.python.org/3/tutorial/index.html" target="_blank" className="font-extrabold block text-4xl py-1">
+                    Python
+                </Link>
             </div>
 
             <div className="text-center py-15">
-                <span className="uppercase text-s text-gray-400">
-                    Blog
-                </span>
 
                 <h2 className="text-4xl font-bold py-10">
                     Recent Posts
                 </h2>
 
                 <p className="m-auto w-4/5 text-gray-500">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque exercitationem saepe enim veritatis, eos temporibus quaerat facere consectetur qui.
+                    Here are some of the most recent posts from our vibrant community!
                 </p>
             </div>
 
-            <div className="sm:grid grid-cols-2 w-4/5 m-auto">
-                <div className="flex bg-yellow-700 text-gray-100 pt-10">
-                    <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                        <span className="uppercase text-xs">
-                            PHP
-                        </span>
+            {recentPosts.map(post => {
+                return(
+                    <div className="flex bg-gray-800 border-4 border-white text-gray-100 pt-10" key={post.slug}>
+                        <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
+                            <span className="uppercase text-xs">
+                                {post.title}
+                            </span>
 
-                        <h3 className="text-xl font-bold py-10">
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas necessitatibus dolorum error culpa laboriosam. Enim voluptas earum repudiandae consequuntur ad? Expedita labore aspernatur facilis quasi ex? Nemo hic placeat et?
-                        </h3>
+                            <h3 className="text-xl font-bold py-10">;
+                                {post.description.length > 250 ?
+                                    <>{post.description.substring(0, 250) + "..."}</>
+                                :
+                                    <>{post.description}</>
+                                }
+                            </h3>
 
-                        <Link 
-                            href=""
-                            className="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-                            Find Out More
-                        </Link>
+                            <Link 
+                                href={`blog/${post.slug}`}
+                                className="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                Read more
+                            </Link>
+                        </div>
                     </div>
-                </div>
-                <div>
-                    <img src="https://cdn.pixabay.com/photo/2014/05/03/01/03/laptop-336704_960_720.jpg" alt=""/>
-                </div>
-            </div>
+                );
+            })}
 
             <Footer/>
         </>
