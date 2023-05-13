@@ -67,7 +67,7 @@ export default function index(){
                 
                             <p className="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
                                 {post.description.length > 250 ?
-                                    <>{post.description.substring(250, post.description.length) + "..."}</>
+                                    <>{post.description.substring(0, 250) + "..."}</>
                                 :
                                     <>{post.description}</>
                                 }
