@@ -67,7 +67,7 @@ export default function Index(){
                                 {post.title}
                             </span>
 
-                            <h3 className="text-xl font-bold py-10">;
+                            <h3 className="text-xl font-bold py-10">
                                 {post.description.length > 250 ?
                                     <>{post.description.substring(0, 250) + "..."}</>
                                 :
