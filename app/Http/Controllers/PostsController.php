@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comment;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Post;
@@ -77,8 +78,9 @@ class PostsController extends Controller
     public function show($slug)
     {
         return Inertia::render('Blog/Show')
-            ->with('post', Post::where('slug', $slug)->first())
-            ->with('users', User::all());
+            ->with('posts', Post::where('slug', $slug)->first())
+            ->with('users', User::all())
+            ->with('comments', Comment::all());
     }
 
     /**
