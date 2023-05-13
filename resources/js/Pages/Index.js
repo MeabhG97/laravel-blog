@@ -34,18 +34,18 @@ export default function Index(){
                     We support these resources, that let you learn...
                 </h2>
 
-                <Link href="https://www.w3schools.com/php/" target="_blank" className="font-extrabold block text-4xl py-1">
+                <a href="https://www.w3schools.com/php/" target="_blank" className="font-extrabold block text-4xl py-1">
                     PHP
-                </Link>
-                <Link href="https://www.w3schools.com/java/" target="_blank" className="font-extrabold block text-4xl py-1">
+                </a>
+                <a href="https://www.w3schools.com/java/" target="_blank" className="font-extrabold block text-4xl py-1">
                     Java
-                </Link>
-                <Link href="https://cplusplus.com/doc/tutorial/" target="_blank" className="font-extrabold block text-4xl py-1">
+                </a>
+                <a href="https://cplusplus.com/doc/tutorial/" target="_blank" className="font-extrabold block text-4xl py-1">
                     C++
-                </Link>
-                <Link href="https://docs.python.org/3/tutorial/index.html" target="_blank" className="font-extrabold block text-4xl py-1">
+                </a>
+                <a href="https://docs.python.org/3/tutorial/index.html" target="_blank" className="font-extrabold block text-4xl py-1">
                     Python
-                </Link>
+                </a>
             </div>
 
             <div className="text-center py-15">

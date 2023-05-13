@@ -39,19 +39,19 @@ function Index() {
     className: "text-center p-15 bg-gray-800 text-white"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "text-2xl pb-5 text-l"
-  }, "We support these resources, that let you learn..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "We support these resources, that let you learn..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.w3schools.com/php/",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
-  }, "PHP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "PHP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.w3schools.com/java/",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
-  }, "Java"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "Java"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://cplusplus.com/doc/tutorial/",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
-  }, "C++"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "C++"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://docs.python.org/3/tutorial/index.html",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
