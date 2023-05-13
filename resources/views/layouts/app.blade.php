@@ -23,46 +23,46 @@
         <!-- navbar goes here -->
         <nav class="bg-gray-800">
             <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-        
-                <div class="flex space-x-4">
-                    <!-- primary nav -->
-                <div class="hidden md:flex items-center space-x-1">
-                    <a href="/" class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('/') ? "text-blue-500" : "" }}">Home</a>
-                    <a href="/blog" class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('blog*') ? "text-blue-500" : "" }}">Blog</a>
-                </div>
-                </div>
-        
-                <!-- secondary nav -->
-                <div class="hidden md:flex items-center space-x-1">
-                    @guest
-                                <a class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('login') ? "text-blue-500" : "" }}" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                @if (Route::has('register'))
-                                    <a class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 {{ request()->is('register') ? "text-blue-500" : "" }}" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                @endif
-                            @else
-                                <span class="block py-2 px-4 text-yellow-400">{{ Auth::user()->name }}</span>
+                <div class="flex justify-between">
+            
+                    <div class="flex space-x-4">
+                        <!-- primary nav -->
+                        <div class="hidden md:flex items-center space-x-1">
+                            <a href="/" class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('/') ? "text-blue-500" : "" }}">Home</a>
+                            <a href="/blog" class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('blog*') ? "text-blue-500" : "" }}">Blog</a>
+                        </div>
+                    </div>
+            
+                    <!-- secondary nav -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        @guest
+                                    <a class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('login') ? "text-blue-500" : "" }}" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    @if (Route::has('register'))
+                                        <a class="py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 {{ request()->is('register') ? "text-blue-500" : "" }}" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    @endif
+                                @else
+                                    <span class="block py-2 px-4 text-yellow-400">{{ Auth::user()->name }}</span>
 
-                                <a href="{{ route('logout') }}"
-                                class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('logout') ? "text-blue-500" : "" }}"
-                                onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
-                                    {{ csrf_field() }}
-                                </form>
-                            @endguest
+                                    <a href="{{ route('logout') }}"
+                                    class="py-5 px-3 text-white hover:text-gray-500 {{ request()->is('logout') ? "text-blue-500" : "" }}"
+                                    onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hidden">
+                                        {{ csrf_field() }}
+                                    </form>
+                                @endguest
+                    </div>
+            
+                    <!-- mobile button goes here -->
+                    <div class="md:hidden flex items-center">
+                        <button class="mobile-menu-button">
+                            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+            
                 </div>
-        
-                <!-- mobile button goes here -->
-                <div class="md:hidden flex items-center">
-                <button class="mobile-menu-button">
-                    <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="white">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                </button>
-                </div>
-        
-            </div>
             </div>
         
             <!-- mobile menu -->
