@@ -5,6 +5,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\CommentsController;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
