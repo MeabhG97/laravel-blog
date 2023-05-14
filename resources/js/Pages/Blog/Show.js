@@ -48,7 +48,7 @@ export default function Show(){
                     By <span className="font-bold italic text-gray-800">{user.name}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                 </span>
 
-                <p className="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
+                <p className="ilmari text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
                     {posts.description}
                 </p>
             </div>
