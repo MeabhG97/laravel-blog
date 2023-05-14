@@ -1,37 +1,60 @@
-## Laravel 8 Complete Blog
+# Laravel Inertia Blog
 
-This repository is linked to [this youtube video](https://www.youtube.com/watch?v=HKJDLXsTr8A&t=4710s) where I show you how to create a complete blog in Laravel 8 using best practices.
+This porject is a Laravel blog with an Inertia React front-end. The example content is computer software development related.
 
-•	Author: Code With Dary <br>
-•	Twitter: [@codewithdary](https://twitter.com/codewithdary) <br>
-•	Instagram: [@codewithdary](https://www.instagram.com/codewithdary/) <br>
+1. [Features](#features)
+2. [Requirements](#requirements)
+3. [Usage](#usage)
+4. [Technologies Used](#technologies-used)
+5. [Before Starting](#before-starting)
+6. [Authors](#authors)
+
+## Features
+
+A blog website allowing users to post blow posts. The users can later edit or delete their posts and make comments on their own and others posts.
+There is user authentication for login and registration.
 
 ## Requirements
-•	PHP 7.3 or higher <br>
-•	Node 12.13.0 or higher <br>
 
-## Usage <br>
-Setting up your development environment on your local machine: <br>
-```
-git clone git@github.com:codewithdary/laravel-8-complete-blog.git
-cd laravel-8-complete-blog
+• PHP 7.3 or higher  
+• Node 12.13.0 or higher
+
+## Technologies Used
+
+- Laravel
+- Inertia
+- React JS
+- Tailwind CSS
+- MariaDB
+
+## Usage
+
+Setting up your development environment on your local machine:
+
+```bash
+git clone git@github.com:MeabhG97/laravel-blog.git
+cd laravel--blog
 cp .env.example .env
 composer install
 php artisan key:generate
-php artisan cache:clear && php artisan config:clear
+php artisan cache:clear
+php artisan config:clear
 php artisan serve
 ```
 
-## Before starting <br>
-Create a database <br>
-```
+## Before starting
+
+Create a database
+
+```bash
 mysql
 create database laravelblog;
 exit;
 ```
 
-Setup your database credentials in the .env file <br>
-```
+Setup your database credentials in the .env file
+
+```env
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -41,9 +64,24 @@ DB_PASSWORD={PASSWORD}
 ```
 
 Migrate the tables
-```
+
+```bash
 php artisan migrate
 ```
 
-## Contributing
-Do not hesitate to contribute to the project by adapting or adding features ! Bug reports or pull requests are welcome.
+To compile any changes made to the javascript front end
+
+```bash
+npm run dev
+```
+
+Or to automatically compile changes
+
+```bash
+npm run watch
+```
+
+## Authors
+
+[Méabh](https://github.com/MeabhG97)  
+[Cian](https://github.com/cianashby1337)
