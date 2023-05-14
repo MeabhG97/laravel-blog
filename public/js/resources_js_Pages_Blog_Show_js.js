@@ -36,12 +36,16 @@ function Show() {
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     message: "",
     post_slug: posts.slug,
-    user_id: auth.user.id,
+    user_id: "",
     post_id: posts.id
   }),
       data = _useForm.data,
       setData = _useForm.setData,
       post = _useForm.post;
+
+  if (auth.user !== null) {
+    setData('user_id', auth.user.id);
+  }
 
   function submit(e) {
     e.preventDefault();
@@ -229,13 +233,13 @@ function Layout() {
 
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
-    "class": "bg-gray-800"
+    className: "bg-gray-800"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "max-w-6xl mx-auto px-4"
+    className: "max-w-6xl mx-auto px-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "flex justify-between"
+    className: "flex justify-between"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "flex space-x-4"
+    className: "flex space-x-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hidden md:flex items-center space-x-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {

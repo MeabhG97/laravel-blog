@@ -59,7 +59,7 @@ export default function Index(){
                 </p>
             </div>
 
-            <div class="sm:grid grid-cols-2 w-4/5 m-auto">
+            <div className="sm:grid grid-cols-2 w-4/5 m-auto">
                 {recentPosts.map(post => {
                     return(
                         <div className="flex bg-gray-800 border-4 border-white text-gray-100 pt-10" key={post.slug}>

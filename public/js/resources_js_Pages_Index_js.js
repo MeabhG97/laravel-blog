@@ -62,7 +62,7 @@ function Index() {
   }, "Recent Posts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "m-auto w-4/5 text-gray-500"
   }, "Here are some of the most recent posts from our vibrant community!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "sm:grid grid-cols-2 w-4/5 m-auto"
+    className: "sm:grid grid-cols-2 w-4/5 m-auto"
   }, recentPosts.map(function (post) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "flex bg-gray-800 border-4 border-white text-gray-100 pt-10",
@@ -204,13 +204,13 @@ function Layout() {
 
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
-    "class": "bg-gray-800"
+    className: "bg-gray-800"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "max-w-6xl mx-auto px-4"
+    className: "max-w-6xl mx-auto px-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "flex justify-between"
+    className: "flex justify-between"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    "class": "flex space-x-4"
+    className: "flex space-x-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hidden md:flex items-center space-x-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
