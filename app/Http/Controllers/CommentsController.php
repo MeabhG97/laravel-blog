@@ -12,7 +12,10 @@ class CommentsController extends Controller
     {
         $request->validate([
             'message' => 'required',
+            'post_id' => 'required'
         ]);
+
+        if ($request->input('user_id') == null) return redirect('/login');
 
 
         Comment::create([

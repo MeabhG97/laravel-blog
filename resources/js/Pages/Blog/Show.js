@@ -14,6 +14,8 @@ export default function Show(){
 
     const {data, setData, post} = useForm({
         message: "",
+        post_slug: posts.slug,
+        user_id: auth.user.id,
         post_id: posts.id
     });
 

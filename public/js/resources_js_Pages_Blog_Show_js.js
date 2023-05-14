@@ -35,6 +35,8 @@ function Show() {
 
   var _useForm = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.useForm)({
     message: "",
+    post_slug: posts.slug,
+    user_id: auth.user.id,
     post_id: posts.id
   }),
       data = _useForm.data,
