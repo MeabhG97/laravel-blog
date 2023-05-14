@@ -15,13 +15,9 @@ export default function Show(){
     const {data, setData, post} = useForm({
         message: "",
         post_slug: posts.slug,
-        user_id: "",
+        user_id: `${auth.user !== null ? auth.user.id : ""}`,
         post_id: posts.id
     });
-
-    if(auth.user !== null){
-        setData('user_id', auth.user.id);
-    }
 
     function submit(e){
         e.preventDefault();
