@@ -15,12 +15,13 @@ export default function Layout(){
         const menu = document.querySelector(".mobile-menu");
         menu.classList.toggle("hidden");
     }
+    //<!--Navbar sample code retrieved from https://codepen.io/chris__sev/pen/QWGjQKe?editors=1010-->
 
     return(
         <nav class="bg-gray-800">
             <div class="max-w-6xl mx-auto px-4">
                 <div class="flex justify-between">
-            
+    
                     <div class="flex space-x-4">
                         <div className="hidden md:flex items-center space-x-1">
                             <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request === "/" ? "text-blue-500" : ""}`} href="/">Home</Link>

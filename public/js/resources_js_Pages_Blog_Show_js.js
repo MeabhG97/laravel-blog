@@ -223,7 +223,8 @@ function Layout() {
   function toggleHidden() {
     var menu = document.querySelector(".mobile-menu");
     menu.classList.toggle("hidden");
-  }
+  } //<!--Navbar sample code retrieved from https://codepen.io/chris__sev/pen/QWGjQKe?editors=1010-->
+
 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
     "class": "bg-gray-800"
