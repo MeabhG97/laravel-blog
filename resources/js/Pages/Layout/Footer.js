@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "@inertiajs/inertia-react";
 
 export default function Footer(){
     return(
         <footer className="bg-gray-800 py-20 mt-20">
-            <div className="sm:grid grid-cols-3 w-4/5 pb-10 m-auto border-b-2 border-gray-700">
+            <div className="sm:grid grid-cols-2 w-4/5 justify-evenly pb-10 m-auto border-b-2 border-gray-700">
                 <div>
                     <h3 className="text-l sm:font-bold text-gray-100">
                         Pages
@@ -11,24 +12,24 @@ export default function Footer(){
 
                     <ul className="py-4 sm:text-s pt-4 text-gray-400">
                         <li className="pb-1">
-                            <a href="/">
+                            <Link href="/">
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li className="pb-1">
-                            <a href="/blog">
+                            <Link href="/blog">
                                 Blog
-                            </a>
+                            </Link>
                         </li>
                         <li className="pb-1">
-                            <a href="/login">
+                            <Link href="/login">
                                 Login
-                            </a>
+                            </Link>
                         </li>
                         <li className="pb-1">
-                            <a href="/register">
+                            <Link href="/register">
                                 Register
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -40,60 +41,29 @@ export default function Footer(){
 
                     <ul className="py-4 sm:text-s pt-4 text-gray-400">
                         <li className="pb-1">
-                            <a href="/">
+                            <Link href="/">
                                 What we do
-                            </a>
+                            </Link>
                         </li>
                         <li className="pb-1">
-                            <a href="/">
+                            <Link href="/">
                                 Address
-                            </a>
+                            </Link>
                         </li>
                         <li className="pb-1">
-                            <a href="/">
+                            <Link href="/">
                                 Phone
-                            </a>
+                            </Link>
                         </li>
                         <li className="pb-1">
-                            <a href="/">
+                            <Link href="/">
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 className="text-l sm:font-bold text-gray-100">
-                        Latest posts
-                    </h3>
-
-                    <ul className="py-4 sm:text-s pt-4 text-gray-400">
-                        <li className="pb-1">
-                            <a href="/">
-                                Why we love tech
-                            </a>
-                        </li>
-                        <li className="pb-1">
-                            <a href="/">
-                                Why we love design
-                            </a>
-                        </li>
-                        <li className="pb-1">
-                            <a href="/">
-                                Why to use Laravel
-                            </a>
-                        </li>
-                        <li className="pb-1">
-                            <a href="/">
-                                Why PHP is the best
-                            </a>
-                        </li>
-                    </ul>
-                </div>
             </div>
-            <p className="w-25 w-4/5 pb-3 m-auto text-xs text-gray-100 pt-6">
-                Copyright 2017-2021 Code With Dary. All Rights Reserved
-            </p>
         </footer>
     );
 }
