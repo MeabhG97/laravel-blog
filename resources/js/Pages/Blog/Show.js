@@ -39,8 +39,10 @@ export default function Show(){
                 </div>
             </div>
 
-            <div>
-                <img src={`../images/${posts.image_path}`} alt=""/>
+            <div className="flex justify-center">
+                <div className="max-w-3xl">
+                    <img className="object-scale-down" src={`../images/${posts.image_path}`} alt=""/>
+                </div>
             </div>
 
             <div className="w-4/5 m-auto pt-20">
