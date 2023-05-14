@@ -30,3 +30,23 @@
 .ilmari {
     white-space: pre-wrap;
 }
+
+.commentBox {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(217, 217, 217, 0.068);
+    border: 1px solid rgba(180, 180, 180, 0.138);
+    border-radius: 10px;
+    width:80%;
+    margin: 1% auto;
+    padding: 3%;
+}
+
+.commentInfoAndDelete, .commentInfo{
+    display: flex;
+    flex-direction: row;
+}
+
+.commentInfoAndDelete {
+    justify-content: space-between;
+}

@@ -90,16 +90,18 @@ function Show() {
       className: "commentBox",
       key: comment.id
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "commentInfoAndDelete"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "commentInfo"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "".concat(date.getDate(), "/").concat(date.getMonth(), "/").concat(date.getFullYear()))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "commentMessage"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, comment.message)), auth.user !== null && auth.user.id == comment.user_id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, ", posted on ".concat(date.getDate(), "/").concat(date.getMonth(), "/").concat(date.getFullYear()))), auth.user !== null && auth.user.id == comment.user_id ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       className: "text-red-500 pr-3",
       type: "button",
       onClick: function onClick() {
         return handleDelete(comment);
       }
-    }, "Delete") : null) : null);
+    }, "Delete") : null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "break-words"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, comment.message))) : null);
   })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Footer__WEBPACK_IMPORTED_MODULE_4__.default, null));
 }
 

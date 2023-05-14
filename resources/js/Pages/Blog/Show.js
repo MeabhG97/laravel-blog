@@ -77,14 +77,12 @@ export default function Show(){
                         <>
                             {comment.post_id === posts.id ?
                                 <div className="commentBox" key={comment.id}> 
-                                    <div className="commentInfo">
-                                        <p>{user.name}</p>
-                                        <p>{`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</p>
-                                    </div>
-                                    <div className="commentMessage">
-                                        <p>{comment.message}</p>
-                                    </div>
-                                    {auth.user !== null && auth.user.id == comment.user_id ?
+                                    <div className="commentInfoAndDelete">
+                                        <div className="commentInfo">
+                                            <p>{user.name}</p>
+                                            <p>{`, posted on ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</p>
+                                        </div>
+                                        {auth.user !== null && auth.user.id == comment.user_id ?
                                         <button
                                             className="text-red-500 pr-3"
                                             type="button"
@@ -94,6 +92,11 @@ export default function Show(){
                                     :
                                         null
                                     }
+                                    </div>
+                                    <div className="break-words">
+                                        <p>{comment.message}</p>
+                                    </div>
+                                    
                                 </div>
                             :
                                 null
