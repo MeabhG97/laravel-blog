@@ -31,7 +31,7 @@ function Index() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "title-text-holder m-auto pt-4 pb-8 pl-2 pr-2 sm:m-auto w-4/5 block text-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14"
+    className: "break-words sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14"
   }, "READY TO JUMP INTO ENGAGING PROGRAMMING DISCUSSIONS?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: "/blog",
     className: "text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl"

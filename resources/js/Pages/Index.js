@@ -17,7 +17,7 @@ export default function Index(){
             <div className="background-image grid grid-cols-1 m-auto">
                 <div className="flex text-gray-100 pt-10">
                     <div className="title-text-holder m-auto pt-4 pb-8 pl-2 pr-2 sm:m-auto w-4/5 block text-center">
-                        <h1 className="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
+                        <h1 className="break-words sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
                             READY TO JUMP INTO ENGAGING PROGRAMMING DISCUSSIONS?
                         </h1>
                         <Link 

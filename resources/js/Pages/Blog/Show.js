@@ -33,7 +33,7 @@ export default function Show(){
             <Layout/>
             <div className="w-4/5 m-auto text-left">
                 <div className="py-15">
-                    <h1 className="text-6xl">
+                    <h1 className="break-words text-6xl">
                         {posts.title}
                     </h1>
                 </div>
