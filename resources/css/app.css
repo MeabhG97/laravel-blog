@@ -18,3 +18,35 @@
     background-color: rgba(75, 75, 75, 0.4);
     border-radius: 20px;
 }
+
+/*
+  
+    The below class helps to preserve line breaks in blog post text, 
+    retrieved from the following link from an answer by Ilmari Karonen
+    https://stackoverflow.com/questions/40417527/how-do-i-preserve-line-breaks-when-getting-text-from-a-textarea
+
+*/
+
+.ilmari {
+    white-space: pre-wrap;
+}
+
+.commentBox {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(217, 217, 217, 0.068);
+    border: 1px solid rgba(180, 180, 180, 0.138);
+    border-radius: 10px;
+    width:80%;
+    margin: 1% auto;
+    padding: 3%;
+}
+
+.commentInfoAndDelete, .commentInfo{
+    display: flex;
+    flex-direction: row;
+}
+
+.commentInfoAndDelete {
+    justify-content: space-between;
+}

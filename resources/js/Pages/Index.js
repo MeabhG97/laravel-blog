@@ -9,7 +9,7 @@ export default function Index(){
 
     const {posts} = usePage().props;
 
-    let recentPosts = posts.slice(0,3);
+    let recentPosts = posts.slice(0,4);
 
     return(
         <>
@@ -17,7 +17,7 @@ export default function Index(){
             <div className="background-image grid grid-cols-1 m-auto">
                 <div className="flex text-gray-100 pt-10">
                     <div className="title-text-holder m-auto pt-4 pb-8 pl-2 pr-2 sm:m-auto w-4/5 block text-center">
-                        <h1 className="sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
+                        <h1 className="break-words sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14">
                             READY TO JUMP INTO ENGAGING PROGRAMMING DISCUSSIONS?
                         </h1>
                         <Link 
@@ -34,18 +34,18 @@ export default function Index(){
                     We support these resources, that let you learn...
                 </h2>
 
-                <Link href="https://www.w3schools.com/php/" target="_blank" className="font-extrabold block text-4xl py-1">
+                <a href="https://www.w3schools.com/php/" target="_blank" className="font-extrabold block text-4xl py-1">
                     PHP
-                </Link>
-                <Link href="https://www.w3schools.com/java/" target="_blank" className="font-extrabold block text-4xl py-1">
+                </a>
+                <a href="https://www.w3schools.com/java/" target="_blank" className="font-extrabold block text-4xl py-1">
                     Java
-                </Link>
-                <Link href="https://cplusplus.com/doc/tutorial/" target="_blank" className="font-extrabold block text-4xl py-1">
+                </a>
+                <a href="https://cplusplus.com/doc/tutorial/" target="_blank" className="font-extrabold block text-4xl py-1">
                     C++
-                </Link>
-                <Link href="https://docs.python.org/3/tutorial/index.html" target="_blank" className="font-extrabold block text-4xl py-1">
+                </a>
+                <a href="https://docs.python.org/3/tutorial/index.html" target="_blank" className="font-extrabold block text-4xl py-1">
                     Python
-                </Link>
+                </a>
             </div>
 
             <div className="text-center py-15">
@@ -59,32 +59,33 @@ export default function Index(){
                 </p>
             </div>
 
-            {recentPosts.map(post => {
-                return(
-                    <div className="flex bg-gray-800 border-4 border-white text-gray-100 pt-10" key={post.slug}>
-                        <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
-                            <span className="uppercase text-xs">
-                                {post.title}
-                            </span>
+            <div class="sm:grid grid-cols-2 w-4/5 m-auto">
+                {recentPosts.map(post => {
+                    return(
+                        <div className="flex bg-gray-800 border-4 border-white text-gray-100 pt-10" key={post.slug}>
+                            <div className="m-auto pt-4 pb-16 sm:m-auto w-4/5 block">
+                                <span className="uppercase text-xs">
+                                    {post.title}
+                                </span>
 
-                            <h3 className="text-xl font-bold py-10">;
-                                {post.description.length > 250 ?
-                                    <>{post.description.substring(0, 250) + "..."}</>
-                                :
-                                    <>{post.description}</>
-                                }
-                            </h3>
+                                <h3 className="text-xl font-bold py-10">
+                                    {post.description.length > 250 ?
+                                        <>{post.description.substring(0, 250) + "..."}</>
+                                    :
+                                        <>{post.description}</>
+                                    }
+                                </h3>
 
-                            <Link 
-                                href={`blog/${post.slug}`}
-                                className="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
-                                Read more
-                            </Link>
+                                <Link 
+                                    href={`blog/${post.slug}`}
+                                    className="uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl">
+                                    Read more
+                                </Link>
+                            </div>
                         </div>
-                    </div>
-                );
-            })}
-
+                    );
+                })}
+            </div>
             <Footer/>
         </>
     );

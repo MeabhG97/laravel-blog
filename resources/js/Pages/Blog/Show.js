@@ -14,6 +14,8 @@ export default function Show(){
 
     const {data, setData, post} = useForm({
         message: "",
+        post_slug: posts.slug,
+        user_id: auth.user.id,
         post_id: posts.id
     });
 
@@ -31,7 +33,7 @@ export default function Show(){
             <Layout/>
             <div className="w-4/5 m-auto text-left">
                 <div className="py-15">
-                    <h1 className="text-6xl">
+                    <h1 className="break-words text-6xl">
                         {posts.title}
                     </h1>
                 </div>
@@ -46,7 +48,7 @@ export default function Show(){
                     By <span className="font-bold italic text-gray-800">{user.name}</span>, Created on {`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}
                 </span>
 
-                <p className="text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
+                <p className="ilmari text-xl text-gray-700 pt-8 pb-10 leading-8 font-light">
                     {posts.description}
                 </p>
             </div>
@@ -75,14 +77,12 @@ export default function Show(){
                         <>
                             {comment.post_id === posts.id ?
                                 <div className="commentBox" key={comment.id}> 
-                                    <div className="commentInfo">
-                                        <p>{user.name}</p>
-                                        <p>{`${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</p>
-                                    </div>
-                                    <div className="commentMessage">
-                                        <p>{comment.message}</p>
-                                    </div>
-                                    {auth.user !== null && auth.user.id == comment.user_id ?
+                                    <div className="commentInfoAndDelete">
+                                        <div className="commentInfo">
+                                            <p>{user.name}</p>
+                                            <p>{`, posted on ${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`}</p>
+                                        </div>
+                                        {auth.user !== null && auth.user.id == comment.user_id ?
                                         <button
                                             className="text-red-500 pr-3"
                                             type="button"
@@ -92,6 +92,11 @@ export default function Show(){
                                     :
                                         null
                                     }
+                                    </div>
+                                    <div className="break-words">
+                                        <p>{comment.message}</p>
+                                    </div>
+                                    
                                 </div>
                             :
                                 null

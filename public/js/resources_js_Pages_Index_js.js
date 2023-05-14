@@ -23,7 +23,7 @@ __webpack_require__.r(__webpack_exports__);
 
 function Index() {
   var posts = (0,_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.usePage)().props.posts;
-  var recentPosts = posts.slice(0, 3);
+  var recentPosts = posts.slice(0, 4);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Layout__WEBPACK_IMPORTED_MODULE_2__.default, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "background-image grid grid-cols-1 m-auto"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -31,7 +31,7 @@ function Index() {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "title-text-holder m-auto pt-4 pb-8 pl-2 pr-2 sm:m-auto w-4/5 block text-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14"
+    className: "break-words sm:text-white text-5xl uppercase font-bold text-shadow-md pb-14"
   }, "READY TO JUMP INTO ENGAGING PROGRAMMING DISCUSSIONS?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
     href: "/blog",
     className: "text-center bg-gray-50 text-gray-700 py-2 px-4 font-bold text-xl"
@@ -39,19 +39,19 @@ function Index() {
     className: "text-center p-15 bg-gray-800 text-white"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", {
     className: "text-2xl pb-5 text-l"
-  }, "We support these resources, that let you learn..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "We support these resources, that let you learn..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.w3schools.com/php/",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
-  }, "PHP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "PHP"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://www.w3schools.com/java/",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
-  }, "Java"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "Java"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://cplusplus.com/doc/tutorial/",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
-  }, "C++"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+  }, "C++"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "https://docs.python.org/3/tutorial/index.html",
     target: "_blank",
     className: "font-extrabold block text-4xl py-1"
@@ -61,7 +61,9 @@ function Index() {
     className: "text-4xl font-bold py-10"
   }, "Recent Posts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "m-auto w-4/5 text-gray-500"
-  }, "Here are some of the most recent posts from our vibrant community!")), recentPosts.map(function (post) {
+  }, "Here are some of the most recent posts from our vibrant community!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    "class": "sm:grid grid-cols-2 w-4/5 m-auto"
+  }, recentPosts.map(function (post) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
       className: "flex bg-gray-800 border-4 border-white text-gray-100 pt-10",
       key: post.slug
@@ -71,11 +73,11 @@ function Index() {
       className: "uppercase text-xs"
     }, post.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
       className: "text-xl font-bold py-10"
-    }, ";", post.description.length > 250 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, post.description.substring(0, 250) + "...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, post.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
+    }, post.description.length > 250 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, post.description.substring(0, 250) + "...") : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, post.description)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
       href: "blog/".concat(post.slug),
       className: "uppercase bg-transparent border-2 border-gray-100 text-gray-100 text-xs font-extrabold py-3 px-5 rounded-3xl"
     }, "Read more")));
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Footer__WEBPACK_IMPORTED_MODULE_3__.default, null));
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Layout_Footer__WEBPACK_IMPORTED_MODULE_3__.default, null));
 }
 
 /***/ }),
@@ -198,16 +200,17 @@ function Layout() {
   function toggleHidden() {
     var menu = document.querySelector(".mobile-menu");
     menu.classList.toggle("hidden");
-  }
+  } //<!--Navbar sample code retrieved from https://codepen.io/chris__sev/pen/QWGjQKe?editors=1010-->
 
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", {
-    className: "bg-gray-800 py-6"
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
+    "class": "bg-gray-800"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "container mx-auto flex justify-between items-center px-6"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", {
-    className: "space-x-4 text-gray-300 text-sm sm:text-base"
+    "class": "max-w-6xl mx-auto px-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "hidden md:flex items-center space-x-1"
+    "class": "flex justify-between"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    "class": "flex space-x-4"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "hidden md:flex items-center space-x-1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
@@ -246,26 +249,26 @@ function Layout() {
     strokeLinejoin: "round",
     strokeWidth: "2",
     d: "M4 6h16M4 12h16M4 18h16"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "mobile-menu hidden md:hidden"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    className: "py-5 px-3 text-white hover:text-gray-500 ".concat(request === "/" ? "text-blue-500" : ""),
+    className: "block py-5 px-3 text-white hover:text-gray-500 ".concat(request === "/" ? "text-blue-500" : ""),
     href: "/"
   }, "Home"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    className: "py-5 px-3 text-white hover:text-gray-500 ".concat(request.startsWith("blog") ? "text-blue-500" : ""),
+    className: "block py-5 px-3 text-white hover:text-gray-500 ".concat(request.startsWith("blog") ? "text-blue-500" : ""),
     href: "/blog"
   }, "Blog"), auth.user === null ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    className: "py-5 px-3 text-white hover:text-gray-500 ".concat(request === "login" ? "text-blue-500" : ""),
+    className: "block py-5 px-3 text-white hover:text-gray-500 ".concat(request === "login" ? "text-blue-500" : ""),
     href: "/login"
   }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    className: "py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 ".concat(request === "register" ? "text-blue-500" : ""),
+    className: "block py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 ".concat(request === "register" ? "text-blue-500" : ""),
     href: "/register"
   }, "Register")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
     className: "block py-2 px-4 text-yellow-400"
   }, auth.user.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_inertiajs_inertia_react__WEBPACK_IMPORTED_MODULE_1__.Link, {
-    className: "py-5 px-3 text-white hover:text-gray-500 ".concat(request === "logout" ? "text-blue-500" : ""),
+    className: "block py-5 px-3 text-white hover:text-gray-500 ".concat(request === "logout" ? "text-blue-500" : ""),
     onClick: handleLogout
-  }, "Logout"))))));
+  }, "Logout")))));
 }
 
 /***/ })

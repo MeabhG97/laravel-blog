@@ -15,13 +15,14 @@ export default function Layout(){
         const menu = document.querySelector(".mobile-menu");
         menu.classList.toggle("hidden");
     }
+    //<!--Navbar sample code retrieved from https://codepen.io/chris__sev/pen/QWGjQKe?editors=1010-->
 
     return(
-        <header className="bg-gray-800 py-6">
-            <div className="container mx-auto flex justify-between items-center px-6">
-
-                <nav className="space-x-4 text-gray-300 text-sm sm:text-base">
-                    <div className="hidden md:flex items-center space-x-1">
+        <nav class="bg-gray-800">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+    
+                    <div class="flex space-x-4">
                         <div className="hidden md:flex items-center space-x-1">
                             <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request === "/" ? "text-blue-500" : ""}`} href="/">Home</Link>
                             <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request.startsWith("blog") ? "text-blue-500" : ""}`} href="/blog">Blog</Link>
@@ -51,25 +52,26 @@ export default function Layout(){
                         </button>
                     </div>
 
+                    </div>
+
                     <div className="mobile-menu hidden md:hidden">
-                        <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request === "/" ? "text-blue-500" : ""}`} href="/">Home</Link>
-                        <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request.startsWith("blog") ? "text-blue-500" : ""}`} href="/blog">Blog</Link>
+                        <Link className={`block py-5 px-3 text-white hover:text-gray-500 ${request === "/" ? "text-blue-500" : ""}`} href="/">Home</Link>
+                        <Link className={`block py-5 px-3 text-white hover:text-gray-500 ${request.startsWith("blog") ? "text-blue-500" : ""}`} href="/blog">Blog</Link>
 
                         {auth.user === null ?
                             <>
-                                <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request === "login" ? "text-blue-500" : ""}`} href="/login">Login</Link>
-                                <Link className={`py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 ${request === "register" ? "text-blue-500" : ""}`} href="/register">Register</Link>
+                                <Link className={`block py-5 px-3 text-white hover:text-gray-500 ${request === "login" ? "text-blue-500" : ""}`} href="/login">Login</Link>
+                                <Link className={`block py-2 px-3 bg-yellow-400 hover:bg-yellow-300 text-white hover:text-gray-500 rounded transition duration-300 ${request === "register" ? "text-blue-500" : ""}`} href="/register">Register</Link>
                             </>
                         :
                             <>          
                                 <span className="block py-2 px-4 text-yellow-400">{auth.user.name}</span>
 
-                                <Link className={`py-5 px-3 text-white hover:text-gray-500 ${request === "logout" ? "text-blue-500" : ""}`} onClick={handleLogout}>Logout</Link>
+                                <Link className={`block py-5 px-3 text-white hover:text-gray-500 ${request === "logout" ? "text-blue-500" : ""}`} onClick={handleLogout}>Logout</Link>
                             </>
                         }
                     </div>
-                </nav>
             </div>
-        </header>
+        </nav>
     );
 }
